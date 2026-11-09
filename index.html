@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#6d28d9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="알고리즘 다찾아">
+<title>알고리즘 다찾아 · 네이버 블로그 알고리즘 변경 모음</title>
+<meta name="description" content="네이버 공식 공지만 근거로 정리한 블로그·검색 알고리즘 변경 타임라인과 내 블로그 적용 체크리스트">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔎</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <div class="logo">🔎 알고리즘 <b>다찾아</b></div>
+    <p class="sub">네이버 <b>공식 공지</b>만 근거로 모은 블로그·검색 변경 사항</p>
+    <div class="stats" id="stats"></div>
+    <div class="progress-wrap">
+      <div class="progress-label"><span>내 블로그 적용 진행률</span><b id="pct">0%</b></div>
+      <div class="bar"><i id="bar"></i></div>
+      <div class="cheer" id="cheer"></div>
+    </div>
+    <p class="updated">마지막 업데이트: <b id="updated">-</b></p>
+  </div>
+</header>
+
+<section class="today" id="today"></section>
+
+<nav class="controls" id="controls">
+  <input id="q" type="search" placeholder="🔍 검색 (예: AI 브리핑, 내돈내산, 클립)" autocomplete="off">
+  <div class="chips" id="statusChips">
+    <button data-s="all" class="on">전체</button>
+    <button data-s="confirmed">✅ 확인됨</button>
+    <button data-s="unverified">❓ 미확인(소문)</button>
+    <button data-s="todo">📝 할 일 남은 것</button>
+  </div>
+  <div class="chips small" id="catChips"></div>
+</nav>
+
+<main>
+  <div id="list" class="timeline"></div>
+  <div id="empty" class="empty" hidden>검색 결과가 없어요 🙈</div>
+  <section id="rumors" class="rumors"></section>
+</main>
+
+<footer>
+  <p id="note"></p>
+  <p>확인한 공식 출처: <span id="srcs"></span></p>
+  <p>체크 표시는 이 기기(브라우저)에만 저장됩니다. <button id="reset" class="link">체크 모두 지우기</button></p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
