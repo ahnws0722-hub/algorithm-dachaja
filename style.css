@@ -77,3 +77,15 @@ footer a{color:var(--mute)}
 .toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#1f1640;color:#fff;padding:10px 16px;border-radius:99px;font-size:14px;z-index:9;animation:up .3s}
 @keyframes up{from{opacity:0;transform:translate(-50%,10px)}}
 @media (min-width:640px){.logo{font-size:34px}.card h2{font-size:18px}}
+
+.dailytop{max-width:760px;margin:12px auto 0;padding:0 12px}
+.dailytop .dt-box{background:#fff;border:2px solid #fbcfe8;border-radius:18px;padding:12px 14px;box-shadow:0 3px 14px rgba(219,39,119,.08)}
+.dailytop h3{margin:0 0 6px;font-size:16px}
+.dailytop h3 span{font-size:13px;color:var(--mute);font-weight:600;margin-left:6px}
+.dailytop .dt-note{font-size:12.5px;color:var(--mute);margin:0 0 8px}
+.dailytop ol{margin:0;padding-left:18px}
+.dailytop li{margin:0 0 10px;font-size:14.5px}
+.dailytop li b{display:block;margin-bottom:2px}
+.dailytop .why{display:block;color:#2d2552;font-size:13.5px}
+.dailytop .apply{margin-top:4px;font-size:13px;color:#6d28d9;background:#faf5ff;border-radius:10px;padding:6px 8px}
+.dailytop .src{margin-top:4px}

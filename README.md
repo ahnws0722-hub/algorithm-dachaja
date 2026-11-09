@@ -19,3 +19,8 @@
 4. 검사: `python3 tools/validate.py --urls` (필드·중복·정렬·URL 실제 열림 확인; 실패 시 커밋 금지)
 5. 커밋·푸시: `git add data.json && git commit -m "주간 갱신 YYYY-MM-DD" && git push`
 6. 1~2분 뒤 라이브 페이지에서 새 항목 확인
+
+## 매일 탑티어(바이럴)
+- `data.json`의 `dailyTop`에 전날(한국 시간) 공개 데이터로 확인된 주제·형식 3~5개를 넣습니다.
+- 공식 변경이 없으면 `items`는 추가하지 않고 `lastUpdated`와 `dailyTop`만 갱신합니다.
+- 확인 안 된 소문·외부 실검 아카이브는 `dailyTop.unverifiedNotes` 또는 `unverified`에만.

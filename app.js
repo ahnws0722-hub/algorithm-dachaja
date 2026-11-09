@@ -52,6 +52,7 @@ function render(){
     html+=card(it);
   });
   $("list").innerHTML=html;
+  renderDailyTop();
   renderRumors();
   var rumorShown=$("rumors").innerHTML!=="";
   $("empty").hidden=!!(list.length||rumorShown);
@@ -79,6 +80,19 @@ function renderRumors(){
     (r.related&&r.related.length?'<div class="src">'+r.related.map(function(s){return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener">🔗 '+esc(s.name)+'</a>'}).join("")+'</div>':'')+
     '<div class="vote"><button data-id="'+esc(r.id)+'" data-v="heard"'+(v==="heard"?' class="on"':'')+'>👂 들어봤어요</button><button data-id="'+esc(r.id)+'" data-v="believed"'+(v==="believed"?' class="on"':'')+'>😅 믿었었어요</button><button data-id="'+esc(r.id)+'" data-v="new"'+(v==="new"?' class="on"':'')+'>💡 처음 알았어요</button></div></div>'}).join("");
 }
+
+function renderDailyTop(){
+  var box=$("dailytop"); if(!box)return;
+  var dt=DATA.dailyTop; if(!dt||!dt.items||!dt.items.length){box.innerHTML="";return}
+  var html='<div class="dt-box"><h3>🔥 전날 탑티어 <span>'+esc(dt.forDate||'')+'</span></h3>';
+  if(dt.note) html+='<p class="dt-note">'+esc(dt.note)+'</p>';
+  html+='<ol>'+dt.items.map(function(it,i){
+    var src=(it.sources||[]).map(function(s){return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a>'}).join(' · ');
+    return '<li><b>'+esc(it.title)+'</b><span class="why">'+esc(it.why||'')+'</span>'+(src?'<div class="src">'+src+'</div>':'')+(it.apply?'<div class="apply">적용: '+esc(it.apply)+'</div>':'')+'</li>';
+  }).join('')+'</ol></div>';
+  box.innerHTML=html;
+}
+
 function stats(){
   var tot=0,dn=0;DATA.items.forEach(function(it){tot+=it.todos.length;dn+=doneCount(it)});
   var recent=DATA.items.filter(function(it){return daysBetween(it.date,DATA.lastUpdated)<=30}).length;
