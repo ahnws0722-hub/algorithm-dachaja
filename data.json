@@ -1191,12 +1191,8 @@
       "url": "https://www.yna.co.kr/view/MYH20261109015700038"
      },
      {
-      "name": "네이버 데이터랩(쇼핑인사이트)",
+      "name": "네이버 데이터랩(홈·쇼핑인사이트 분야별 인기검색어)",
       "url": "https://datalab.naver.com/"
-     },
-     {
-      "name": "데이터랩 쇼핑 키워드랭크 API 응답 기준일 2026-11-08",
-      "url": "https://datalab.naver.com/shoppingInsight/sCategory.naver"
      }
     ],
     "apply": "블로그는 ‘올겨울 경량패딩, 내가 비교해 본 기준’처럼 경험 UGC형. 클립은 사진 첨부→ChatGPT에 소재·핏 질문하는 화면 한 수."
